@@ -1,31 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Technical Documentation</title>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
 
-  <body>
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    <main id = "main-doc">
-      <section class = "main-section" id="summary">
-        <header>Summary</header>
-      </section>
-      <section class = "main-section" id="syntax">
-        <header>Syntax</header>
-      </section>
-      <section class = "main-section" id="description">
-        <header>Descripttion</header>
-      </section>
-      <section class = "main-section" id="examples">
-        <header>Examples</header>
-      </section>
-      <section class = "main-section" id="polyfill">
-        <header>Polyfill</header>
-      </section>
-    </main>
+<head>
+  <meta charset="UTF-8">
+  <title>Technical Documentation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <script  src="js/index.js"></script>
-  </body>
+<body>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <main id="main-doc">
+    <section class="main-section" id="summary">
+      <header>Summary</header>
+      <p>The <strong>reduce()</strong>method executes a <strong>reducer</strong> function (that you provide) on each
+        element of the array, resulting in a single output value.</p>
+      <p><strong>JavaScript Demo: Array.reduce()</strong></p>
+      <code>
+          const array1 = [1, 2, 3, 4];<br>
+          const reducer = (accumulator, currentValue) => accumulator + currentValue;<br>
+          
+          // 1 + 2 + 3 + 4<br>
+          console.log(array1.reduce(reducer));<br>
+          // expected output: 10<br>
+          
+          // 5 + 1 + 2 + 3 + 4<br>
+          console.log(array1.reduce(reducer, 5));<br>
+          // expected output: 15<br>
+        </code>
+      <p>The reducer function takes four arguments:</p>
+      <ol>
+        <li>Accumulator (acc)</li>
+        <li>Current Value (cur)</li>
+        <li>Current Index (idx)</li>
+        <li>Source Array (src)</li>
+      </ol>
+      <p>Your <strong>reducer</strong> function's returned value is assigned to the accumulator, whose value is remembered across each
+        iteration throughout the array and ultimately becomes the final, single resulting value.</p>
+    </section>
+    <section class="main-section" id="syntax">
+      <header>Syntax</header>
+    </section>
+    <section class="main-section" id="description">
+      <header>Descripttion</header>
+    </section>
+    <section class="main-section" id="examples">
+      <header>Examples</header>
+    </section>
+    <section class="main-section" id="polyfill">
+      <header>Polyfill</header>
+    </section>
+  </main>
+
+  <script src="js/index.js"></script>
+</body>
+
 </html>
