@@ -34,7 +34,8 @@
         <li>Current Index (idx)</li>
         <li>Source Array (src)</li>
       </ol>
-      <p>Your <strong>reducer</strong> function's returned value is assigned to the accumulator, whose value is remembered across each
+      <p>Your <strong>reducer</strong> function's returned value is assigned to the accumulator, whose value is
+        remembered across each
         iteration throughout the array and ultimately becomes the final, single resulting value.</p>
     </section>
     <section class="main-section" id="syntax">
@@ -42,24 +43,66 @@
       <p><i>arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])</i></p>
       <h3>Parameters</h3>
       <i><strong>callback</strong></i>
-      <p>A function to execute on each element in the array (except for the first, if no <i>initialValue</i> is supplied), taking four arguments:</p>
+      <p>A function to execute on each element in the array (except for the first, if no <i>initialValue</i> is
+        supplied), taking four arguments:</p>
       <i><strong>accumulator</strong></i>
-      <p>The accumulator accumulates the callback's return values. It is the accumulated value previously returned in the last invocation of the callback, or <i>initialValue</i>, if supplied (see below).</p>
+      <p>The accumulator accumulates the callback's return values. It is the accumulated value previously returned in
+        the last invocation of the callback, or <i>initialValue</i>, if supplied (see below).</p>
       <i><strong>currentValue</strong></i>
       <p>The current element being processed in the array.</p>
       <i><strong>index</strong></i> || Optional
-      <p>The index of the current element being processed in the array. Starts from index 0 if an <i>initialValue</i> is provided. Otherwise, starts from index 1.</p>
+      <p>The index of the current element being processed in the array. Starts from index 0 if an <i>initialValue</i> is
+        provided. Otherwise, starts from index 1.</p>
       <i><strong>array</strong></i> || Optional
       <p>The array reduce() was called upon.</p>
       <i><strong>initialValue</strong></i> || Optional
-      <p>A value to use as the first argument to the first call of the <i>callback</i>. If no <i>initialValue</i>  is supplied, the first element in the array will be used and skipped. Calling <i>reduce()</i>  on an empty array without an <i>initialValue</i> will throw a <i>TypeError</i>.</p>
+      <p>A value to use as the first argument to the first call of the <i>callback</i>. If no <i>initialValue</i> is
+        supplied, the first element in the array will be used and skipped. Calling <i>reduce()</i> on an empty array
+        without an <i>initialValue</i> will throw a <i>TypeError</i>.</p>
     </section>
     <section class="main-section" id="description">
       <header>Descripttion</header>
       <p></p>
-    </section>
+    </section><br>
     <section class="main-section" id="examples">
-      <header>Examples</header>
+      <header>Examples</header><br>
+      <i><strong>Sum all the values of an array</strong></i><br><br>
+      <code>
+        var sum = [0, 1, 2, 3].reduce(function (accumulator, currentValue) {<br>
+          return accumulator + currentValue;<br>
+        }, 0);<br>
+        // sum is 6<br>
+      </code><br>
+      <p>Alternatively written with an arrow function:</p><br>
+      <code>var total = [ 0, 1, 2, 3 ].reduce(<br>
+      ( accumulator, currentValue ) => accumulator + currentValue,<br>
+      0<br>
+      );<br>
+      </code><br>
+      <i><strong>Sum of values in an object array</strong></i><br>
+      <p>To sum up the values contained in an array of objects, you <strong>must</strong> supply an
+        <code>initialValue</code>, so that each item passes
+        through your function.</p><br>
+      <code>
+          var initialValue = 0;<br>
+          var sum = [{x: 1}, {x: 2}, {x: 3}].reduce(function (accumulator, currentValue) {<br>
+              return accumulator + currentValue.x;<br>
+          },initialValue)<br>
+          
+          console.log(sum) // logs 6<br>
+
+      </code><br>
+      <p>Alternatively written with an arrow function:</p><br>
+      <code>var initialValue = 0;<br>
+          var sum = [{x: 1}, {x: 2}, {x: 3}].reduce(<br>
+              (accumulator, currentValue) => accumulator + currentValue.x<br>
+              ,initialValue<br>
+          );<br>
+          
+          console.log(sum) // logs 6<br>
+      </code>
+
+
     </section>
     <section class="main-section" id="polyfill">
       <header>Polyfill</header>
