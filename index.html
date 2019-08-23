@@ -9,6 +9,13 @@
 
 <body>
   <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <nav>
+    <a href="#summary"></a>
+    <a href="#syntax"></a>
+    <a href="#description"></a>
+    <a href="#examples"></a>
+    <a href="#polyfill"></a>
+  </nav>
   <main id="main-doc">
     <section class="main-section" id="summary">
       <header>Summary</header>
@@ -61,9 +68,16 @@
         without an <i>initialValue</i> will throw a <i>TypeError</i>.</p>
     </section>
     <section class="main-section" id="description">
-      <header>Descripttion</header>
-      <p></p>
-    </section><br>
+      <header>Description</header>
+      <p>The <i>reduce()</i> method executes the callback once for each assigned value present in the array, taking four arguments:</p>
+      <ul>
+        <li><i>accumulator</i></li>
+        <li><i>currentValue</i></li>
+        <li><i>currentIndex</i></li>
+        <li><i>array</i></li>
+      </ul>
+      <p>The first time the callback is called,<i> accumulator</i> and <i>currentValue</i> can be one of two values. If <i>initialValue</i> is provided in the call to <i>reduce()</i>, then <i>accumulator</i> will be equal to <i>initialValue</i>, and <i>currentValue</i> will be equal to the first value in the array. If no <i>initialValue</i> is provided, then <i>accumulator</i> will be equal to the first value in the array, and <i>currentValue</i> will be equal to the second.</p>
+    </section>
     <section class="main-section" id="examples">
       <header>Examples</header><br>
       <i><strong>Sum all the values of an array</strong></i><br><br>
@@ -108,7 +122,6 @@
       <header>Polyfill</header>
     </section>
   </main>
-
   <script src="js/index.js"></script>
 </body>
 
