@@ -9,12 +9,22 @@
 
 <body>
   <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-  <nav>
-    <a href="#summary"></a>
-    <a href="#syntax"></a>
-    <a href="#description"></a>
-    <a href="#examples"></a>
-    <a href="#polyfill"></a>
+  <nav id="navbar">
+    <header>
+    <a href="#summary" class="nav-link">Summary</a>
+    </header>
+    <header>
+       <a href="#syntax" class="nav-link">Syntax</a>
+    </header>
+    <header>
+       <a href="#description" class="nav-link">Description</a>
+    </header>
+    <header>
+       <a href="#exaples" class="nav-link">Examples</a>
+    </header>
+    <header>
+      <a href="#polyfill" class="nav-link">Polyfill </a>
+    </header>
   </nav>
   <main id="main-doc">
     <section class="main-section" id="summary">
@@ -102,7 +112,7 @@
           var sum = [{x: 1}, {x: 2}, {x: 3}].reduce(function (accumulator, currentValue) {<br>
               return accumulator + currentValue.x;<br>
           },initialValue)<br>
-          
+
           console.log(sum) // logs 6<br>
 
       </code><br>
@@ -112,7 +122,7 @@
               (accumulator, currentValue) => accumulator + currentValue.x<br>
               ,initialValue<br>
           );<br>
-          
+
           console.log(sum) // logs 6<br>
       </code>
 
